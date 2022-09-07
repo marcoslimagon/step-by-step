@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  python:
+    container_name: python_fd
+    image: python:3.11-rc-bullseye
+    cap_add:
+    - CAP_SYS_ADMIN
+    command:
+      - /bin/sh
+      - -c
+      - |
+          sleep 10000
+    volumes:
+      - ./app:/home/app
+    working_dir: /home/app/
